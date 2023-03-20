@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import MessageFormUI from "./MessageFormUI";
 
 const StandardMessageForm = ({ props, activeChat }) => {
-  console.log(props, activeChat);
-
   const [message, setMessage] = useState("");
   const [attachment, setAttachment] = useState("");
 
