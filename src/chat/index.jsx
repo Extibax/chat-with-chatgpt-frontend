@@ -15,9 +15,9 @@ import AiAssist from "../customMessageForms/AiAssist";
 
 const Chat = () => {
   const chatProps = useMultiChatLogic(
-    import.meta.env.VITE_PROJECT_ID,
-    import.meta.env.VITE_DEFAULT_USER,
-    import.meta.env.VITE_DEFAULT_SECRET
+    process.env.VITE_PROJECT_ID,
+    process.env.VITE_DEFAULT_USER,
+    process.env.VITE_DEFAULT_SECRET
   );
 
   return (
@@ -36,7 +36,9 @@ const Chat = () => {
             return <AiCode props={props} activeChat={chatProps.chat} />;
           }
 
-          if (chatProps.chat?.title.startsWith("Text completion on input box AI")) {
+          if (
+            chatProps.chat?.title.startsWith("Text completion on input box AI")
+          ) {
             return <AiAssist props={props} activeChat={chatProps.chat} />;
           }
 
